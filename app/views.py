@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def home(request):
     return render(request, 'myapp/index.html')
+
+def main_app(request):
+    return render(request, 'main/main.html')
