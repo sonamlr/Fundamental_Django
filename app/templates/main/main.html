@@ -2,6 +2,16 @@
 {% block title %} main page {% endblock %}
 {% block content %}
 <h1>Welcome to Main Page </h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit magnam odit suscipit eius commodi quasi nemo perferendis ea quam assumenda incidunt amet fugiat possimus iusto, ipsum excepturi dicta? Esse, quaerat.</p>
+
+{% for chai in chais %}
+   <img src="{{chai.image.url}}" alt="chai image" height="300px" width="350px">
+   <h3>{{chai.name}}</h3>
+   <a href="{% url 'chai_detail' chai.id %}">
+    <button>
+        {{chai.type}} - {{chai.id}}
+    </button>
+   </a>
+{% endfor %}
+
 
 {% endblock %}
